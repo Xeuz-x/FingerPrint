@@ -221,7 +221,30 @@ class FingerPrint:
         self.identity.Type = WINBIO_ID_TYPE_SID
         self.identity.Value.AccountSid.Size = GetLengthSid(token_user.User.Sid)
 
-
+def ui():
+    app = QtWidgets.QApplication(sys.argv)
+    Mainwindow = QtWidgets.QMainWindow()
+    window = Ui_MainWindow()
+    window.setupUi(Mainwindow)
+    Mainwindow.show()
+    sys.exit(app.exec_())
+    
+def userCheck():
+    myFP = FingerPrint()
+    try:
+        myFP.open()
+        print("Please touch the fingerprint sensor")
+        if myFP.verify():
+            
+            uByteID = list(myFP.identity.Value.AccountSid.Data)[0:myFP.identity.Value.AccountSid.Size]
+            Ustring = ("".join([str(i) for i in uByteID]))
+            myFP.close()
+            return(Ustring)
+        else:
+            return False
+    finally:
+        myFP.close()
+    
 if __name__ == '__main__':
     myFP = FingerPrint()
     try:
