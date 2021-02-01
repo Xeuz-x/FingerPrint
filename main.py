@@ -41,7 +41,6 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         self.count = 0
         self.nukes = []
-        self.arrdata = None
         self.selected = []
         self.passwordLength = 6
         self.bomb()
@@ -114,13 +113,11 @@ class MainWindow(QMainWindow):
             data += f"|{website}:{username}:{password}"
             
     def updateData(self, arrIndex):
-        
         global data
-        
+        dat = data.split('|')
         for index in reversed(arrIndex):
-            print("deleting", self.arrdata[index])
-            self.arrdata.pop(index)
-        data = "|".join(self.arrdata) 
+            dat.pop(index)
+        data = "|".join(dat) 
             
     def recursiveDel(self, counter):
         rowPosition = self.ui.tableWidget.rowCount()
@@ -190,7 +187,6 @@ class MainWindow(QMainWindow):
         # * with the read data
         global data
         var = data.split('|')
-        self.arrdata = var
         for i in var:
             var_i = i.split(':')
             self.addField(var_i[1], var_i[2], var_i[0])
