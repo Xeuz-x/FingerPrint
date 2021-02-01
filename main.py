@@ -274,17 +274,12 @@ if __name__ == "__main__":
         window = MainWindow()
         sys.exit(app.exec_())
 
-    except:
-        if data:
-            with open("passwords.txt", "r+b") as openFile:
-                openFile.seek(0)
-                fer = Fernet(key)
-                decrypt = fer.encrypt(data.encode())
-                openFile.write(decrypt)
-                openFile.truncate()
-                openFile.close()
-            
-            timer.cancel()
-        else:
-            print("Ultimate Crash")
+    except:  
+        with open("passwords.txt", "r+b") as openFile:
+            openFile.seek(0)
+            fer = Fernet(key)
+            decrypt = fer.encrypt(data.encode())
+            openFile.write(decrypt)
+            openFile.truncate()
+            openFile.close()         
             timer.cancel()
