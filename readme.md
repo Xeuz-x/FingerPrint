@@ -5,6 +5,7 @@
 ## How to use
 
 CD to Clone --> 
+
 py main.py -->
 
 ## Currently the program needs to be called in the top-level window. So use the command line instead of IDEs to
