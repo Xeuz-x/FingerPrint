@@ -2,7 +2,7 @@
 
 [Fork: Modified to work as a password manager](https://github.com/luspock/FingerPrint)
 
-Ps. A really attempt at a password manager.
+Ps. A really bad attempt at a password manager.
 
 ## How to use
 
