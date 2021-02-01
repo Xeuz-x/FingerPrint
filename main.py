@@ -53,6 +53,7 @@ class MainWindow(QMainWindow):
         self.ui.tableWidget.cellEntered.connect(self.cellHover)
         self.ui.s_char_checkBox.setCheckState(QtCore.Qt.Unchecked)
         if data:
+            self.count += 1
             self.initFields()
             
         self.ui.tableWidget.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
@@ -108,7 +109,7 @@ class MainWindow(QMainWindow):
         if self.count == 0:
             data += f"{website}:{username}:{password}"
             self.count+= 1
-        else:    
+        elif self.count > 0:
             data += f"|{website}:{username}:{password}"
             
     def updateData(self, arrIndex):
@@ -217,8 +218,8 @@ class MainWindow(QMainWindow):
         if self.ui.checkBox.checkState():
             username, password, website = self.checkFields()
             if username and password and website:
-                self.addField(username.strip(), password.strip(), website.strip(), True)
-                self.addData(username.strip(), password.strip(), website.strip())
+                self.addField(username.strip().replace(' ', ''), password.strip().replace(' ', ''), website.strip().replace(' ', ''), True)
+                self.addData(username.strip().replace(' ', ''), password.strip().replace(' ', ''), website.strip().replace(' ', ''))
             else:
                 error_dialog = QtWidgets.QErrorMessage()
                 error_dialog.showMessage('Missing field(s)!')
