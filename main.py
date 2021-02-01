@@ -246,19 +246,21 @@ if __name__ == "__main__":
         
     userInput = input("Use windows biometrics? Y/N ")
     if userInput.upper() == 'Y':
-        if fingerId := userCheck():
-            salt = b'A_Salt'
-            kdf = PBKDF2HMAC(
-                algorithm=hashes.SHA256(),
-                length=32,
-                salt=salt,
-                iterations=100000,
-                backend=default_backend()
-            )
-            with open("passwords.txt", "r+b") as openFile:
-                encryptedData = openFile.read()
+        if fingerId := userCheck(): fingerId
     else:
         fingerId = input("Enter password")
+        
+    salt = b'A_Salt'
+    kdf = PBKDF2HMAC(
+        algorithm=hashes.SHA256(),
+        length=32,
+        salt=salt,
+        iterations=100000,
+        backend=default_backend()
+    )
+    with open("passwords.txt", "r+b") as openFile:
+        encryptedData = openFile.read()
+        
         
     key = base64.urlsafe_b64encode(kdf.derive(fingerId.encode()))
     fer = Fernet(key)
