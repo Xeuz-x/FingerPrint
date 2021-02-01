@@ -13,5 +13,10 @@ Terminal: py main.py -->
 ## Features 🔥
 ![Yo](https://cdn.discordapp.com/attachments/799536846689271808/805781562968899635/ezgif.com-gif-maker.gif)
 
+## WARNING BUGS ‼️
+
+Could lead to total loss of saved data
+
+
 ## Currently the program needs to be called in the top-level window. So use the command line instead of IDEs to
 call the program, otherwise the sensor will ignore your touch.
