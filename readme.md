@@ -2,8 +2,7 @@
 
 [Fork: Modified to work as a password manager](https://github.com/luspock/FingerPrint)
 
-Ps. A really bad attempt at a password manager.
-A password manager that uses windows biometrics
+A password manager that uses windows biometrics. (PS. A really bad attempt at a password manager)
 
 ## How to use ✒️
 
