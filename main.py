@@ -54,7 +54,6 @@ class MainWindow(QMainWindow):
         self.ui.s_char_checkBox.setCheckState(QtCore.Qt.Unchecked)
         if data:
             self.initFields()
-            self.count+= 1
             
         self.ui.tableWidget.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
         self.show() 
