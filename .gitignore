@@ -109,3 +109,4 @@ venv.bak/
 .vscode/settings.json
 *.ui
 Tests/
+run_encrpyt.py
