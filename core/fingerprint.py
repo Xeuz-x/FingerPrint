@@ -71,7 +71,7 @@ class SID_AND_ATTRIBUTES(ctypes.Structure):
                 ("Attributes", wintypes.DWORD)]
 
 
-class TOEKN_USER(ctypes.Structure):
+class TOKEN_USER(ctypes.Structure):
     _fields_ = [("User", SID_AND_ATTRIBUTES)]
 
 
@@ -213,7 +213,7 @@ class FingerPrint:
                                   )
         assert res > 0, "Error in second GetTokenInformation (%d)" % res
 
-        token_user = ctypes.cast(buffer, ctypes.POINTER(TOEKN_USER)).contents
+        token_user = ctypes.cast(buffer, ctypes.POINTER(TOKEN_USER)).contents
         CopySid(SECURITY_MAX_SID_SIZE,
                 self.identity.Value.AccountSid.Data,
                 token_user.User.Sid

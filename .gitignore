@@ -110,3 +110,5 @@ venv.bak/
 *.ui
 Tests/
 run_encrpyt.py
+test_main.py
+previous.py
