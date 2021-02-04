@@ -6,13 +6,13 @@ A password manager that uses windows biometrics. (PS. A really bad attempt at a 
 
 ## How to use ✒️
 
-Terminal: pip [install qtpy](https://pypi.org/project/QtPy/)
+📌 Terminal: pip [install qtpy](https://pypi.org/project/QtPy/)
 
-Terminal: Git clone https://github.com/Xeuz-x/PassMan.git
+📌 Terminal: git clone https://github.com/Xeuz-x/PassMan.git
 
-Terminal: CD to Clone --> 
+📌 Terminal: cd to clone directory 
 
-Terminal: py main.py -->
+📌 Terminal: py main.py
 
 ## Features 🔥
 ![Yo](https://cdn.discordapp.com/attachments/799536846689271808/805781562968899635/ezgif.com-gif-maker.gif)
