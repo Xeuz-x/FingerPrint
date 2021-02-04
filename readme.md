@@ -6,6 +6,10 @@ A password manager that uses windows biometrics. (PS. A really bad attempt at a 
 
 ## How to use ✒️
 
+Terminal: pip [install qtpy](https://pypi.org/project/QtPy/)
+
+Terminal: Git clone https://github.com/Xeuz-x/PassMan.git
+
 Terminal: CD to Clone --> 
 
 Terminal: py main.py -->
